@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Alleviation Foundation</title>
+</head>
+<body>
+    <h1>Disaster Alleviation Foundation</h1>
+
+    <!-- User Registration Form -->
+    <h2>Register</h2>
+    <input type="email" id="registerEmail" placeholder="Email" required>
+    <input type="password" id="registerPassword" placeholder="Password" required>
+    <button type="button" onclick="registerUser()">Register</button>
+
+    <!-- User Login Form -->
+    <h2>Login</h2>
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button type="button" onclick="loginUser()">Login</button>
+
+    <!-- Incident Reporting Form -->
+    <h2>Report Incident</h2>
+    <input type="text" id="disasterType" placeholder="Disaster Type" required>
+    <input type="text" id="location" placeholder="Location" required>
+    <textarea id="description" placeholder="Description"></textarea>
+    <button type="button" onclick="reportIncident()">Submit Incident</button>
+
+    <!-- Donation Form -->
+    <h2>Donate Resources</h2>
+    <label for="resourceType">Resource Type</label>
+    <select id="resourceType" required>
+        <option value="">Select Resource Type</option>
+        <option value="food">Food</option>
+        <option value="clothing">Clothing</option>
+        <option value="medical">Medical Supplies</option>
+    </select>
+    <input type="number" id="quantity" placeholder="Quantity" required>
+    <input type="text" id="donationLocation" placeholder="Location" required>
+    <button type="button" onclick="submitDonation()">Donate</button>
+
+    <h2>Your Donations</h2>
+    <ul id="donationsList"></ul>
+    <button type="button" onclick="fetchDonations()">View Donations</button>
+
+    <!-- Link to your app.js file -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
