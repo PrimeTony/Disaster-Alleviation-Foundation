@@ -1,0 +1,19 @@
+#status {
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 1.2em; /* Increase font size */
+}
+
+#status button {
+    margin-left: 10px; /* Add space between text and button */
+    background-color: #c0392b; /* Red background for logout button */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+}
+
+#status button:hover {
+    background-color: #a93226; /* Darker red on hover */
+}
