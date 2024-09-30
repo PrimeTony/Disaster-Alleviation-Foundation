@@ -1,8 +1,8 @@
 // Import the Firebase functions you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
-import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js"; // Added query and where
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
+import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -171,9 +171,22 @@ async function fetchDonations() {
     }
 }
 
+// Logout Function
+async function logoutUser() {
+    try {
+        await signOut(auth);
+        alert("You have been logged out.");
+        window.location.href = 'index.html'; // Redirect to home after logout
+    } catch (error) {
+        console.error("Error logging out:", error);
+        alert("Error logging out: " + error.message);
+    }
+}
+
 // Expose functions globally
 window.registerUser = registerUser;
 window.loginUser = loginUser;
 window.reportIncident = reportIncident;
 window.submitDonation = submitDonation;
-window.fetchDonations = fetchDonations; // Ensure fetchDonations is globally accessible
+window.fetchDonations = fetchDonations;
+window.logoutUser = logoutUser; // Make logoutUser globally accessible
