@@ -171,6 +171,31 @@ async function fetchDonations() {
     }
 }
 
+// Function to Handle Submission
+async function submitContactForm(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const name = document.getElementById("contactName").value;
+    const email = document.getElementById("contactEmail").value;
+    const message = document.getElementById("contactMessage").value;
+
+    // Basic validation
+    if (!name || !email || !message) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // Here, you can add code to send the message to your backend or an email service
+    try {
+        // Example API call to send the message
+        // await sendMessageToAPI({ name, email, message });
+        alert("Your message has been sent successfully!");
+    } catch (error) {
+        console.error("Error sending message:", error);
+        alert("Error sending message: " + error.message);
+    }
+}
+
 // Logout Function
 async function logoutUser() {
     try {
@@ -190,3 +215,4 @@ window.reportIncident = reportIncident;
 window.submitDonation = submitDonation;
 window.fetchDonations = fetchDonations;
 window.logoutUser = logoutUser; // Make logoutUser globally accessible
+window.submitContactForm = submitContactForm; // Make submitContactForm globally accessible

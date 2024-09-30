@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="report.html">Report an Incident</a></li>
+            <li><a href="donate.html">Donate Resources</a></li>
+            <li><a href="view-donations.html">View Donations</a></li>
+            <li><a href="contact.html">Contact Us</a></li> <!-- Link to Contact Us page -->
+            <li><a href="#" onclick="logoutUser()">Logout</a></li>
+
+        </ul>
+    </nav>
+
+    <h1>Contact Us</h1>
+    <form id="contactForm" onsubmit="submitContactForm(event)">
+        <input type="text" id="contactName" placeholder="Your Name" required>
+        <input type="email" id="contactEmail" placeholder="Your Email" required>
+        <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    
+    <script type="module" src="app.js"></script>
+</body>
+</html>
