@@ -11,28 +11,38 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="register.html">Register</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="report.html">Report an Incident</a></li>
             <li><a href="donate.html">Donate Resources</a></li>
             <li><a href="view-donations.html">View Donations</a></li>
+            <li><a href="view-incidents.html">View Incidents</a></li> <!-- Added link to view incidents -->
             <li><a href="#" onclick="logoutUser()">Logout</a></li>
-
         </ul>
     </nav>
 
     <!-- Donation Form -->
     <h2>Donate Resources</h2>
-    <label for="resourceType">Resource Type</label>
-    <select id="resourceType" required>
-        <option value="">Select Resource Type</option>
-        <option value="food">Food</option>
-        <option value="clothing">Clothing</option>
-        <option value="medical">Medical Supplies</option>
-    </select>
-    <input type="number" id="quantity" placeholder="Quantity" required>
-    <input type="text" id="donationLocation" placeholder="Location" required>
-    <button type="button" onclick="submitDonation()">Donate</button>
+    <form id="donationForm" onsubmit="submitDonation(); return false;">
+        <label for="resourceType">Resource Type:</label>
+        <select id="resourceType" required>
+            <option value="">Select Resource Type</option>
+            <option value="food">Food</option>
+            <option value="clothing">Clothing</option>
+            <option value="medical">Medical Supplies</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" placeholder="Quantity" required>
+
+        <label for="donationLocation">Location:</label>
+        <input type="text" id="donationLocation" placeholder="Location" required>
+
+        <h2>Donate Money</h2>
+        <label for="moneyAmount">Monetary Donation Amount:</label>
+        <input type="number" id="moneyAmount" name="moneyAmount" min="1" placeholder="Enter amount in ZAR" step="0.01" required>
+
+        <button type="submit">Donate</button>
+    </form>
 
     <!-- Link to your JavaScript file -->
     <script type="module" src="app.js"></script>

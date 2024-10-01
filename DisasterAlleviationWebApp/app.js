@@ -1,8 +1,9 @@
-// Import the Firebase functions you need
+// Import the Firebase functions
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-auth.js";
 import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js";
+import { onSnapshot } from "firebase/firestore";
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -20,6 +21,49 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
+
+// Function to fetch and display reported incidents in a table
+function fetchIncidents() {
+    const incidentsRef = collection(db, "incidentReports");
+
+    // Set up a real-time listener
+    onSnapshot(incidentsRef, (querySnapshot) => {
+        const incidentsList = document.getElementById("incidentsList");
+        incidentsList.innerHTML = ""; // Clear previous incidents
+
+        querySnapshot.forEach((doc) => {
+            const incident = doc.data();
+            const row = document.createElement("tr");
+
+            const disasterCell = document.createElement("td");
+            disasterCell.textContent = incident.disasterType;
+            row.appendChild(disasterCell);
+
+            const locationCell = document.createElement("td");
+            locationCell.textContent = incident.location;
+            row.appendChild(locationCell);
+
+            const descriptionCell = document.createElement("td");
+            descriptionCell.textContent = incident.description;
+            row.appendChild(descriptionCell);
+
+            const dateCell = document.createElement("td");
+            dateCell.textContent = incident.timestamp.toDate().toLocaleDateString();
+            row.appendChild(dateCell);
+
+            incidentsList.appendChild(row);
+        });
+    }, (error) => {
+        console.error("Error fetching incidents: ", error);
+        alert("Error fetching incidents: " + error.message);
+    });
+}
+
+// Call fetchIncidents on page load
+window.onload = fetchIncidents;
+
+
 
 // User Registration Function
 async function registerUser() {
@@ -77,6 +121,9 @@ async function loginUser() {
     }
 }
 
+
+
+
 // Incident Reporting Function
 async function reportIncident() {
     const disasterType = document.getElementById("disasterType").value;
@@ -120,21 +167,35 @@ async function submitDonation() {
     const resourceType = document.getElementById("resourceType").value;
     const quantity = document.getElementById("quantity").value;
     const donationLocation = document.getElementById("donationLocation").value;
+    const moneyAmount = document.getElementById("moneyAmount").value; // Get money donation amount
 
-    if (!resourceType || !quantity || !donationLocation) {
-        alert("Please fill in all the required fields.");
+    // Determine if a resource or monetary donation is being made
+    if (!resourceType && !moneyAmount) {
+        alert("Please provide either a resource type or a monetary donation.");
         return;
     }
 
     try {
-        await addDoc(collection(db, "donations"), {
+        // Prepare donation object
+        const donationData = {
             donorId: auth.currentUser ? auth.currentUser.uid : null,
-            resourceType,
-            quantity,
             location: donationLocation,
             status: "pending",
             date: new Date(),
-        });
+        };
+
+        // Add resource donation if applicable
+        if (resourceType && quantity) {
+            donationData.resourceType = resourceType;
+            donationData.quantity = quantity;
+        }
+
+        // Add monetary donation if applicable
+        if (moneyAmount) {
+            donationData.amount = parseFloat(moneyAmount);
+        }
+
+        await addDoc(collection(db, "donations"), donationData);
         alert("Donation submitted successfully!");
     } catch (error) {
         console.error("Error submitting donation: ", error);
@@ -142,7 +203,9 @@ async function submitDonation() {
     }
 }
 
-// Function to fetch and display donations
+
+
+// Function to fetch and display donations in a table
 async function fetchDonations() {
     const user = auth.currentUser;
     if (!user) {
@@ -161,15 +224,36 @@ async function fetchDonations() {
 
         querySnapshot.forEach((doc) => {
             const donation = doc.data();
-            const listItem = document.createElement("li");
-            listItem.textContent = `Resource: ${donation.resourceType}, Quantity: ${donation.quantity}, Location: ${donation.location}, Status: ${donation.status}, Date: ${donation.date.toDate()}`; // Ensure you call toDate() on the date object
-            donationsList.appendChild(listItem);
+            const row = document.createElement("tr");
+
+            const resourceCell = document.createElement("td");
+            resourceCell.textContent = donation.resourceType;
+            row.appendChild(resourceCell);
+
+            const quantityCell = document.createElement("td");
+            quantityCell.textContent = donation.quantity;
+            row.appendChild(quantityCell);
+
+            const locationCell = document.createElement("td");
+            locationCell.textContent = donation.location;
+            row.appendChild(locationCell);
+
+            const statusCell = document.createElement("td");
+            statusCell.textContent = donation.status;
+            row.appendChild(statusCell);
+
+            const dateCell = document.createElement("td");
+            dateCell.textContent = donation.date.toDate().toLocaleDateString();
+            row.appendChild(dateCell);
+
+            donationsList.appendChild(row);
         });
     } catch (error) {
         console.error("Error fetching donations: ", error);
         alert("Error fetching donations: " + error.message);
     }
 }
+
 
 // Function to Handle Submission
 async function submitContactForm(event) {
@@ -207,6 +291,8 @@ async function logoutUser() {
         alert("Error logging out: " + error.message);
     }
 }
+
+
 
 // Expose functions globally
 window.registerUser = registerUser;
