@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Incident - Disaster Alleviation Foundation</title>
+    <title>View Reported Incidents - Disaster Alleviation Foundation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,23 +11,28 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-        
             <li><a href="login.html">Login</a></li>
             <li><a href="report.html">Report an Incident</a></li>
             <li><a href="donate.html">Donate Resources</a></li>
             <li><a href="view-donations.html">View Donations</a></li>
-            <li><a href="view-incidents.html">View Incidents</a></li> <!-- Added link to view incidents -->
-            <li><a href="#" onclick="logoutUser()">Logout</a></li>
-
+            <li><a="#" onclick="logoutUser()">Logout</a></li>
         </ul>
     </nav>
 
-    <!-- Incident Reporting Form -->
-    <h2>Report Incident</h2>
-    <input type="text" id="disasterType" placeholder="Disaster Type" required>
-    <input type="text" id="location" placeholder="Location" required>
-    <textarea id="description" placeholder="Description"></textarea>
-    <button type="button" onclick="reportIncident()">Submit Incident</button>
+    <h2>Reported Incidents</h2>
+    <table id="incidentsTable">
+        <thead>
+            <tr>
+                <th>Disaster Type</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="incidentsList">
+            <!-- Incidents will be populated here -->
+        </tbody>
+    </table>
 
     <!-- Link to your JavaScript file -->
     <script type="module" src="app.js"></script>
