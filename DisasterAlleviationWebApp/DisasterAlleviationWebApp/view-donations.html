@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Donations - Disaster Alleviation Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="report.html">Report an Incident</a></li>
+            <li><a href="donate.html">Donate Resources</a></li>
+            <li><a href="view-donations.html">View Donations</a></li>
+            <li><a href="#" onclick="logoutUser()">Logout</a></li>
+        </ul>
+    </nav>
+
+    <h2>Your Donations</h2>
+    <button type="button" onclick="fetchDonations()">View Donations</button>
+
+    <!-- Donations Table -->
+    <table id="donationsTable" border="1" style="width: 100%; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>Resource Type</th>
+                <th>Quantity</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="donationsList"></tbody>
+    </table>
+
+    <!-- Link to your JavaScript file -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
