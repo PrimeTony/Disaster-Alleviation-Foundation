@@ -1,4 +1,4 @@
-name: Firebase Hosting Merge
+name: firebase Hosting Merge
 
 on:
   push:
