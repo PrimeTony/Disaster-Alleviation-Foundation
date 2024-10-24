@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 public class VolunteerController : Controller
 {
     // Register as volunteer

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 public class IncidentReportController : Controller
 {
     // Submit report page
