@@ -31,3 +31,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DISASTERALLEVIATION_FOUNDATION }}'
           channelId: live
           projectId: disasteralleviation-foundation
+          entryPoint: ./
