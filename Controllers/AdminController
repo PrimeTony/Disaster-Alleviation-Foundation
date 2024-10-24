@@ -1,0 +1,16 @@
+using Microsoft.AspNetCore.Mvc;
+
+public class AdminController : Controller
+{
+    // Admin dashboard
+    public IActionResult Dashboard()
+    {
+        return View();
+    }
+
+    // View all reports (Admin only)
+    public IActionResult ReviewReports()
+    {
+        return View();
+    }
+}

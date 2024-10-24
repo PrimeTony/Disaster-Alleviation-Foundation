@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Submit Report";
+}
+
+<h2>Submit Disaster Incident Report</h2>
+
+<form id="reportForm">
+    <div class="mb-3">
+        <label for="disasterType" class="form-label">Disaster Type:</label>
+        <input type="text" id="disasterType" class="form-control" placeholder="e.g., Flood, Earthquake" required />
+    </div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location:</label>
+        <input type="text" id="location" class="form-control" placeholder="Enter the affected location" required />
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea id="description" class="form-control" rows="5" placeholder="Describe the disaster and its impact" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Report</button>
+</form>
+
+<script type="module">
+    // Import the Firebase Firestore functions
+    import { submitReport } from '/js/incident-report.js'; // Your JavaScript logic for submitting the report
+
+    // Handle form submission
+    document.getElementById('reportForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const disasterType = document.getElementById('disasterType').value;
+        const location = document.getElementById('location').value;
+        const description = document.getElementById('description').value;
+        
+        // Submit the report to Firestore
+        submitReport(disasterType, location, description);
+    });
+</script>
