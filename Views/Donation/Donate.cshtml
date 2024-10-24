@@ -1,0 +1,39 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Resource Donation</h2>
+
+<form id="donationForm">
+    <div>
+        <label>Resource Type:</label>
+        <input type="text" id="resourceType" required />
+    </div>
+    <div>
+        <label>Quantity:</label>
+        <input type="number" id="quantity" required />
+    </div>
+    <button type="submit">Donate</button>
+</form>
+
+<script type="module">
+    import { db } from '/js/firebase-config.js';
+    import { collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore.js';
+
+    document.getElementById('donationForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const resourceType = document.getElementById('resourceType').value;
+        const quantity = document.getElementById('quantity').value;
+        
+        try {
+            await addDoc(collection(db, "donations"), {
+                resourceType: resourceType,
+                quantity: quantity,
+                donationDate: new Date()
+            });
+            alert("Donation submitted!");
+        } catch (error) {
+            console.error("Error submitting donation:", error);
+        }
+    });
+</script>
