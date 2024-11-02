@@ -1,4 +1,4 @@
-name: firebase Hosting Merge
+name: Firebase Hosting Merge
 
 on:
   push:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3 # Updated to latest version
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3 # Updated to latest version
         with:
-          node-version: '14'
+          node-version: '16' # or '20'
 
       - name: Install dependencies
         run: npm install
