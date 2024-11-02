@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\ST10097198_Part 2_APPR6312\\DisasterAlleviationWebApp\\DisasterAlleviationWebApp.csproj": {}
+    "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\Disaster-Alleviation-Foundation\\DisasterAlleviationWebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\ST10097198_Part 2_APPR6312\\DisasterAlleviationWebApp\\DisasterAlleviationWebApp.csproj": {
+    "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\Disaster-Alleviation-Foundation\\DisasterAlleviationWebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\ST10097198_Part 2_APPR6312\\DisasterAlleviationWebApp\\DisasterAlleviationWebApp.csproj",
+        "projectUniqueName": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\Disaster-Alleviation-Foundation\\DisasterAlleviationWebApp.csproj",
         "projectName": "DisasterAlleviationWebApp",
-        "projectPath": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\ST10097198_Part 2_APPR6312\\DisasterAlleviationWebApp\\DisasterAlleviationWebApp.csproj",
+        "projectPath": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\Disaster-Alleviation-Foundation\\DisasterAlleviationWebApp.csproj",
         "packagesPath": "C:\\Users\\hulis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\ST10097198_Part 2_APPR6312\\DisasterAlleviationWebApp\\obj\\",
+        "outputPath": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\Disaster-Alleviation-Foundation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hulis\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\hulis\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

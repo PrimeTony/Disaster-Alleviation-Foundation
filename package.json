@@ -1,0 +1,19 @@
+{
+  "name": "disaster-alleviation-foundation",
+  "version": "1.0.0",
+  "description": "The Disaster Alleviation Foundation web application aims to provide disaster relief and support to those in need. Users can register, report incidents, and donate resources through a user-friendly interface. The application is built using Firebase for authentication and Firestore for data management.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrimeTony/Disaster-Alleviation-Foundation.git"
+  },
+  "author": "Hulisani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrimeTony/Disaster-Alleviation-Foundation/issues"
+  },
+  "homepage": "https://github.com/PrimeTony/Disaster-Alleviation-Foundation#readme"
+}

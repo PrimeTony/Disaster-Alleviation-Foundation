@@ -41,3 +41,15 @@ C:\Users\hulis\Documents\School\Semester 2\APPR6312\ST10097198_Part 2_APPR6312\D
 C:\Users\hulis\Documents\School\Semester 2\APPR6312\ST10097198_Part 2_APPR6312\DisasterAlleviationWebApp\obj\Debug\net8.0\DisasterAlleviationWebApp.pdb
 C:\Users\hulis\Documents\School\Semester 2\APPR6312\ST10097198_Part 2_APPR6312\DisasterAlleviationWebApp\obj\Debug\net8.0\DisasterAlleviationWebApp.genruntimeconfig.cache
 C:\Users\hulis\Documents\School\Semester 2\APPR6312\ST10097198_Part 2_APPR6312\DisasterAlleviationWebApp\obj\Debug\net8.0\ref\DisasterAlleviationWebApp.dll
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.csproj.AssemblyReference.cache
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.AssemblyInfoInputs.cache
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.AssemblyInfo.cs
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.csproj.CoreCompileInputs.cache
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.RazorAssemblyInfo.cache
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.RazorAssemblyInfo.cs
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.sourcelink.json
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.dll
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\refint\DisasterAlleviationWebApp.dll
+C:\Users\hulis\Documents\School\Semester 2\APPR6312\Disaster-Alleviation-Foundation\obj\Debug\net8.0\DisasterAlleviationWebApp.pdb

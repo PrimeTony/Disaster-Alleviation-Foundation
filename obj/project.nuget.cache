@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "66bAyBKhUh0=",
+  "dgSpecHash": "CE+uvD8aHZk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\ST10097198_Part 2_APPR6312\\DisasterAlleviationWebApp\\DisasterAlleviationWebApp.csproj",
+  "projectFilePath": "C:\\Users\\hulis\\Documents\\School\\Semester 2\\APPR6312\\Disaster-Alleviation-Foundation\\DisasterAlleviationWebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hulis\\.nuget\\packages\\firebaseadmin\\3.0.1\\firebaseadmin.3.0.1.nupkg.sha512",
     "C:\\Users\\hulis\\.nuget\\packages\\google.api.gax\\4.8.0\\google.api.gax.4.8.0.nupkg.sha512",
