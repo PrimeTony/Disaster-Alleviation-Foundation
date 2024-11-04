@@ -1,10 +1,9 @@
-# ASP.NET
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
+name: Firebase Hosting Merge
 
 trigger:
-- APPR6312
+  branches:
+    include:
+      - APPR6312
 
 pool:
   vmImage: 'windows-latest'
@@ -32,3 +31,15 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.0.0'
+
+- script: |
+    npm install
+    npm run build
+    npm test
+  displayName: 'Build and Test'
+
+- task: FirebaseExtended/action-hosting-deploy@v0 inputs: repoToken: '${{ secrets.GITHUB_TOKEN }}' firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DISASTERALLEVIATION_FOUNDATION }}' channelId: 'live' projectId: 'disasteralleviation-foundation' entryPoint: './'
